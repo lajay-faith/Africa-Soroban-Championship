@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --asc-green: #006B3F;
+  --asc-gold: #FCD116;
+  --asc-red: #CE1126;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F9F6EF;
+  color: #0A0A0A;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #006B3F 0%, #004d2d 60%, #0A0A0A 100%);
+}
+
+.gold-text {
+  color: #FCD116;
+}
+
+.section-divider {
+  border-color: #FCD116;
+}
