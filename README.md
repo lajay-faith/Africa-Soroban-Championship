@@ -1,77 +1,85 @@
 # 🧮 Africa Soroban Championship (ASC)
 
-A continent-wide educational initiative powered by the Stellar Soroban methodology — transforming numeracy education across Africa through competitive mental math.
+A continent-wide educational initiative transforming numeracy education across Africa through competitive mental math.
 
-## 🌍 About
+## 🗂 Project Structure
 
-The Africa Soroban Championship (ASC) aims to improve numeracy skills among African children (ages 5–14) through:
-
-- Abacus-based (Soroban) mental math training
-- Gamified competitions from school → regional → national → continental level
-- Teacher training and certification programs
-- Structured student assessment tools
+```
+├── src/                  # Next.js frontend
+│   ├── app/
+│   │   ├── page.tsx          # Landing page
+│   │   ├── about/            # About ASC
+│   │   ├── compete/          # Competition levels
+│   │   ├── register/         # Registration form
+│   │   ├── partners/         # Partnership tiers
+│   │   └── contact/          # Contact form
+│   ├── components/           # Shared UI components
+│   └── lib/api.ts            # API client
+│
+└── backend/              # Express.js REST API
+    └── src/
+        ├── server.js
+        └── routes/
+            ├── registrations.js
+            ├── competitions.js
+            ├── partners.js
+            └── contact.js
+```
 
 ## 🚀 Getting Started
 
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) v18+
-- npm or yarn
-
-### Installation
+### Frontend (Next.js)
 
 ```bash
+# Install dependencies
 npm install
-```
 
-### Development
+# Copy env file
+cp .env.example .env.local
 
-```bash
+# Run dev server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000)
 
-### Build
+### Backend (Express)
 
 ```bash
-npm run build
-npm start
+cd backend
+
+# Install dependencies
+npm install
+
+# Copy env file
+cp .env.example .env
+
+# Run dev server
+npm run dev
 ```
 
-## 📁 Project Structure
+API runs on [http://localhost:5000](http://localhost:5000)
 
-```
-src/
-├── app/
-│   ├── page.tsx          # Landing page
-│   ├── about/            # About ASC
-│   ├── compete/          # Competition structure
-│   ├── register/         # Registration form
-│   └── partners/         # Partnership opportunities
-├── components/
-│   ├── Navbar.tsx
-│   ├── Hero.tsx
-│   ├── Stats.tsx
-│   ├── ProgramStructure.tsx
-│   ├── ImpactSection.tsx
-│   ├── Partners.tsx
-│   ├── CallToAction.tsx
-│   └── Footer.tsx
-```
+## 🔌 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/health` | Health check |
+| GET | `/api/registrations` | List all registrations |
+| POST | `/api/registrations` | Submit registration |
+| GET | `/api/competitions` | List competition levels |
+| GET | `/api/competitions/:level` | Get specific level |
+| GET | `/api/partners/tiers` | List partnership tiers |
+| POST | `/api/partners/inquire` | Submit partner inquiry |
+| POST | `/api/contact` | Send contact message |
 
 ## 🎨 Brand Colors
 
-| Color | Hex | Usage |
-|-------|-----|-------|
-| Green | `#006B3F` | Primary (Pan-African green) |
-| Gold | `#FCD116` | Accent (Pan-African gold) |
-| Red | `#CE1126` | Highlight (Pan-African red) |
-
-## 🤝 Partnership
-
-Interested in sponsoring or partnering with ASC?
-Contact: partnerships@africasorobanchampionship.org
+| Color | Hex |
+|-------|-----|
+| Green | `#006B3F` |
+| Gold  | `#FCD116` |
+| Red   | `#CE1126` |
 
 ## 📄 License
 
